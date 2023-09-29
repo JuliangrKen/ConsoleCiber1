@@ -21,6 +21,7 @@ if (!File.Exists(filename))
 
 var textUp = (File.ReadAllText(filename) ?? "").ToUpper()
     .Replace(' ', '_')
+    .Replace('\n', '_')
     .ToString();
 
 textUp?.ToList().ForEach(l =>
