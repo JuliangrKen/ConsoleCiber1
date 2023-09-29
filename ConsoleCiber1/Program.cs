@@ -35,7 +35,7 @@ var allNumLetters = letters.Sum(x => x.Num);
 var strFile = $"Num symbols: {allNumLetters}\n|  i  |  Name  |  Num  | P(i) | log2(Pi) | P(i) * log2(Pi) |\n";
 letters.ForEach(l =>
 {
-    var idStr = l.I > 9 ? " " + l.I : l.I.ToString();
+    var idStr = l.I < 10 ? " " + l.I : l.I.ToString();
     var pi = l.Num / allNumLetters;
     var log2Pi = Math.Log(pi, 2);
 
