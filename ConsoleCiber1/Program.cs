@@ -33,7 +33,7 @@ textUp?.ToList().ForEach(l =>
 
 var allNumLetters = letters.Sum(x => x.Num);
 
-var strFile = $"Num symbols: {allNumLetters}\n|  i  |  Name  |  Num  | P(i) | log2(Pi) | P(i) * log2(Pi) |\n";
+var strFile = $"Num symbols: {allNumLetters}\n\n| {"i",-16} | {"Name",-16} | {"Num",-16} | {"P(i)",-16} | {"log2(Pi)",-16} | {"P(i) * log2(Pi)",-16} |\n";
 letters.ForEach(l =>
 {
     var idStr = l.I < 10 ? " " + l.I : l.I.ToString();
@@ -42,11 +42,11 @@ letters.ForEach(l =>
 
     if (l.Num > 0)
     {
-        strFile += $"| {idStr}  |  {l.Name}  |  {l.Num} |  {pi:F7} | {log2Pi:F7} | {pi * log2Pi:F7} |\n";
+        strFile += $"| {idStr,-16} | {l.Name,-16} | {l.Num,-16} | {pi.ToString("F7"), -16} | {log2Pi.ToString("F7"),-16} | {(pi * log2Pi).ToString("F7"), -16} |\n";
     }
     else
     {
-        strFile += ($"| {idStr}  |  {l.Name}  |  {l.Num}  |    -    |   -    |  -   |\n");
+        strFile += $"| {idStr,-16} | {l.Name,-16} | {l.Num,-16} | {"",-16} | {"",-16} | {"",-16} |\n";
     }
 });
 
